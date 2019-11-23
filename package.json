@@ -1,0 +1,18 @@
+{
+  "name": "create-gh",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yikeda6616/create-gh.git",
+  "author": "Yasushi Ikeda <yikeda6616@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "puppeteer": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^2.0.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
+}
