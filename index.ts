@@ -7,9 +7,5 @@ const env = { ...(dotenv.config().parsed as any) };
 (async () => {
   await gh.initialize();
 
-  await gh.login(env.USERNAME, env.PASSWORD);
-
-  await gh.photoSaveProcßessß(['audi', 'bmw']);
-
   await gh.close();
 })();
