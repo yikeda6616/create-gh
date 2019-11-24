@@ -7,5 +7,7 @@ const env = { ...(dotenv.config().parsed as any) };
 (async () => {
   await gh.initialize();
 
-  await gh.close();
+  await gh.login(env.USERNAME, env.PASSWORD);
+
+  // await gh.close();
 })();
