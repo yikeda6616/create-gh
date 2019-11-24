@@ -10,7 +10,7 @@ const github = {
 
   initialize: async () => {
     github.browser = await puppeteer.launch({
-      headless: false, // debug purpose
+      headless: true,
       slowMo: 50 // Make execution slow
     });
 
