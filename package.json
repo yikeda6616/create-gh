@@ -5,6 +5,9 @@
   "repository": "https://github.com/yikeda6616/create-gh.git",
   "author": "Yasushi Ikeda <yikeda6616@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "puppeteer": "^2.0.0"
