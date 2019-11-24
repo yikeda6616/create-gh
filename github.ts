@@ -33,6 +33,7 @@ const github = {
 
   createRepoProcess: async (repositoryName: string) => {
     await github.page.goto(NEW_URL, { waitUntil: 'networkidle2' });
+    await github.page.waitFor(1000); // To make sure the form is loaded.
 
     // Type input field
     await github.page.type('input[name="repository[name]"]', repositoryName, {
