@@ -1,5 +1,6 @@
 import * as puppeteer from 'puppeteer';
 
+const BASE_URL = 'https://github.com/';
 const LOGIN_URL = 'https://github.com/login';
 const NEW_URL = 'https://github.com/new';
 
@@ -33,11 +34,21 @@ const github = {
   createRepoProcess: async (repositoryName: string) => {
     await github.page.goto(NEW_URL, { waitUntil: 'networkidle2' });
 
-    // TODO: Type input field
+    // Type input field
+    await github.page.type('input[name="repository[name]"]', repositoryName, {
+      delay: 50
+    });
 
-    // TODO: Select Private Repository
+    // Select Private Repository
+    const visibilityRadioBox = await github.page.$('input[value="private"]');
+    await visibilityRadioBox.click();
 
-    // TODO: Click on the
+    // Click on the create repository button
+    const createButton = await github.page.$(
+      'button.btn.btn-primary.first-in-line'
+    );
+    await createButton.click();
+    await github.page.waitForNavigation({ waitUntil: 'networkidle2' });
   }
 };
 
