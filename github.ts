@@ -43,6 +43,7 @@ const github = {
     // Select Private Repository
     const visibilityRadioBox = await github.page.$('input[value="private"]');
     await visibilityRadioBox.click();
+    await github.page.waitFor(1000); // To make sure the form is loaded.
 
     // Click on the create repository button
     const createButton = await github.page.$(
