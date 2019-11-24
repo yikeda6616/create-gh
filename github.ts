@@ -1,9 +1,7 @@
 import * as puppeteer from 'puppeteer';
 
-const repositoryName = process.argv[2];
-console.log(`Repository Title: ${repositoryName}`);
-
-const BASE_URL = 'https://github.com/login';
+const LOGIN_URL = 'https://github.com/login';
+const NEW_URL = 'https://github.com/new';
 
 const github = {
   browser: null as any,
@@ -19,7 +17,7 @@ const github = {
   },
 
   login: async (username: string, password: string) => {
-    await github.page.goto(BASE_URL, { waitUntil: 'networkidle2' });
+    await github.page.goto(LOGIN_URL, { waitUntil: 'networkidle2' });
     await github.page.waitFor(1000); // To make sure the form is loaded.
 
     // Type input fields
@@ -27,9 +25,19 @@ const github = {
     await github.page.type('input[name="password"]', password, { delay: 50 });
 
     // Click on the login button
-    const loginButton = await github.page.$('button[type="submit"]');
+    const loginButton = await github.page.$('input[type="submit"]');
     await loginButton.click();
     await github.page.waitForNavigation({ waitUntil: 'networkidle2' });
+  },
+
+  createRepoProcess: async (repositoryName: string) => {
+    await github.page.goto(NEW_URL, { waitUntil: 'networkidle2' });
+
+    // TODO: Type input field
+
+    // TODO: Select Private Repository
+
+    // TODO: Click on the
   }
 };
 
