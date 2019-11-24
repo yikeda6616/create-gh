@@ -14,5 +14,5 @@ console.log(`Repository Title: ${repositoryName}`);
 
   await gh.createRepoProcess(repositoryName);
 
-  // await gh.close();
+  await gh.close();
 })();

@@ -49,6 +49,10 @@ const github = {
     );
     await createButton.click();
     await github.page.waitForNavigation({ waitUntil: 'networkidle2' });
+  },
+
+  close: async () => {
+    github.browser.close();
   }
 };
 
