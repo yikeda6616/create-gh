@@ -22,9 +22,14 @@ const github = {
     await github.page.goto(BASE_URL, { waitUntil: 'networkidle2' });
     await github.page.waitFor(1000); // To make sure the form is loaded.
 
-    // TODO: Type input
+    // Type input fields
+    await github.page.type('input[name="login"]', username, { delay: 50 });
+    await github.page.type('input[name="password"]', password, { delay: 50 });
 
-    // TODO: Click on the login button
+    // Click on the login button
+    const loginButton = await github.page.$('button[type="submit"]');
+    await loginButton.click();
+    await github.page.waitForNavigation({ waitUntil: 'networkidle2' });
   }
 };
 
