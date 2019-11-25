@@ -18,6 +18,7 @@ const github = {
   },
 
   login: async (username: string, password: string) => {
+    console.log('--- Starting Login Process ---');
     await github.page.goto(LOGIN_URL, { waitUntil: 'networkidle2' });
     await github.page.waitFor(1000); // To make sure the form is loaded.
 
@@ -29,9 +30,13 @@ const github = {
     const loginButton = await github.page.$('input[type="submit"]');
     await loginButton.click();
     await github.page.waitForNavigation({ waitUntil: 'networkidle2' });
+    console.log('--- Finishing Login Process ---');
   },
 
   createRepoProcess: async (repositoryName: string) => {
+    console.log('--- Starting Create Repository Process ---');
+    console.log(`Repository Name: ${repositoryName}`);
+
     await github.page.goto(NEW_URL, { waitUntil: 'networkidle2' });
     await github.page.waitFor(1000); // To make sure the form is loaded.
 
@@ -51,9 +56,11 @@ const github = {
     );
     await createButton.click();
     await github.page.waitForNavigation({ waitUntil: 'networkidle2' });
+    console.log('--- Finishing Create Repository Process ---');
   },
 
   close: async () => {
+    console.log('--- Closing Puppeteer ---');
     github.browser.close();
   }
 };
