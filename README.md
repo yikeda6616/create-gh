@@ -7,10 +7,20 @@ Automate creating GitHub Repository process and push first commit, then open the
 ```
 cd ~
 git clone https://github.com/yikeda6616/create-gh
-vi ~/create-gh/.create-gh.sh
+vi ~/create-gh/.env # Edit .env
+vi ~/create-gh/.create-gh.sh # Edit .create-gh.sh
 ```
 
-## Edit .create-gh.sh
+## Edit `.env`
+
+Type your GitHub account
+
+```
+USERNAME=
+PASSWORD=
+```
+
+## Edit `.create-gh.sh`
 
 ```
 function create() {
