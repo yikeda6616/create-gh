@@ -5,7 +5,6 @@ import gh from './github';
 const env = { ...(dotenv.config().parsed as any) };
 
 const repositoryName = process.argv[2];
-console.log(`Repository Title: ${repositoryName}`);
 
 (async () => {
   await gh.initialize();
