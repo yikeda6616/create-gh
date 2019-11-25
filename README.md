@@ -10,7 +10,7 @@ git clone https://github.com/yikeda6616/create-gh
 vi ~/create-gh/.create-gh.sh
 ```
 
-## .create-gh.sh
+## Edit .create-gh.sh
 
 ```
 function create() {
