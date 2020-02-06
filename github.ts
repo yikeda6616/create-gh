@@ -23,8 +23,8 @@ const github = {
     await github.page.waitFor(1000); // To make sure the form is loaded.
 
     // Type input fields
-    await github.page.type('input[name="login"]', username, { delay: 50 });
-    await github.page.type('input[name="password"]', password, { delay: 50 });
+    await github.page.type('input[name="login"]', username);
+    await github.page.type('input[name="password"]', password);
 
     // Click on the login button
     const loginButton = await github.page.$('input[type="submit"]');
