@@ -41,9 +41,7 @@ const github = {
     await github.page.waitFor(1000); // To make sure the form is loaded.
 
     // Type input field
-    await github.page.type('input[name="repository[name]"]', repositoryName, {
-      delay: 50
-    });
+    await github.page.type('input[name="repository[name]"]', repositoryName);
 
     // Select Private Repository
     const visibilityRadioBox = await github.page.$('input[value="private"]');
